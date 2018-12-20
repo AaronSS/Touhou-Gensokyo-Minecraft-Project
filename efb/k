@@ -1,0 +1,2 @@
+docker  kill ehforwarderbot
+docker rm ehforwarderbot

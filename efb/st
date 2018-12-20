@@ -1,0 +1,1 @@
+docker run -d --restart=always --name=ehforwarderbot -v /root/efb/config.py:/opt/ehForwarderBot/config.py -v /root/efb/tgdata.db:/opt/ehForwarderBot/plugins/eh_telegram_master/tgdata.db royx/docker-efb
