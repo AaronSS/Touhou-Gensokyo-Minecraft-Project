@@ -1,0 +1,26 @@
+[
+  {
+    "uuid": "49599a7b-8a90-43a6-adfc-3994dc46fbc4",
+    "name": "Atom_EVA",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "1af1fbc6-93d6-4b1c-9465-0af66acde76c",
+    "name": "Passionette",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "31d2289b-2f6d-4d43-9e59-8c378f3b4516",
+    "name": "Tera",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "bfb04d9c-e896-46ec-a9f7-262f07531b3a",
+    "name": "Terranceshura",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

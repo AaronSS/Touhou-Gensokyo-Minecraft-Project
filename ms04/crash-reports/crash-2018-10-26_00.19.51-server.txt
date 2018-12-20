@@ -1,0 +1,134 @@
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 10/26/18, 12:19 AM
+Description: Watching Server
+
+java.lang.Error
+	at java.base@10.0.2/java.lang.Thread.sleep(Native Method)
+	at app//net.minecraft.server.MinecraftServer.run(SourceFile:468)
+	at java.base@10.0.2/java.lang.Thread.run(Thread.java:844)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.base@10.0.2/java.lang.Thread.sleep(Native Method)
+
+-- Thread Dump --
+Details:
+	Threads: "Reference Handler" daemon prio=10 Id=2 RUNNABLE
+	at java.base@10.0.2/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+	at java.base@10.0.2/java.lang.ref.Reference.processPendingReferences(Reference.java:174)
+	at java.base@10.0.2/java.lang.ref.Reference.access$000(Reference.java:44)
+	at java.base@10.0.2/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:138)
+
+
+"Finalizer" daemon prio=8 Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@55a26deb
+	at java.base@10.0.2/java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@55a26deb
+	at java.base@10.0.2/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:151)
+	at java.base@10.0.2/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:172)
+	at java.base@10.0.2/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+
+"Signal Dispatcher" daemon prio=9 Id=4 RUNNABLE
+
+
+"Common-Cleaner" daemon prio=8 Id=9 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@61696719
+	at java.base@10.0.2/java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@61696719
+	at java.base@10.0.2/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:151)
+	at java.base@10.0.2/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:148)
+	at java.base@10.0.2/java.lang.Thread.run(Thread.java:844)
+	at java.base@10.0.2/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:134)
+
+
+"Snooper Timer" daemon prio=5 Id=13 TIMED_WAITING on java.util.TaskQueue@22844028
+	at java.base@10.0.2/java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@22844028
+	at java.base@10.0.2/java.util.TimerThread.mainLoop(Timer.java:553)
+	at java.base@10.0.2/java.util.TimerThread.run(Timer.java:506)
+
+
+"Server Infinisleeper" daemon prio=5 Id=14 TIMED_WAITING
+	at java.base@10.0.2/java.lang.Thread.sleep(Native Method)
+	at app//nz$1.run(SourceFile:84)
+
+
+"Server thread" prio=5 Id=15 TIMED_WAITING
+	at java.base@10.0.2/java.lang.Thread.sleep(Native Method)
+	at app//net.minecraft.server.MinecraftServer.run(SourceFile:468)
+	at java.base@10.0.2/java.lang.Thread.run(Thread.java:844)
+
+
+"DestroyJavaVM" prio=5 Id=17 RUNNABLE
+
+
+"Netty Epoll Server IO #0" daemon prio=5 Id=19 RUNNABLE
+	at app//io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at app//io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at app//io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at app//io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at app//io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.base@10.0.2/java.lang.Thread.run(Thread.java:844)
+
+
+"Server Watchdog" daemon prio=5 Id=20 RUNNABLE
+	at java.management@10.0.2/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@10.0.2/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:502)
+	at java.management@10.0.2/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:490)
+	at app//oa.run(SourceFile:43)
+	at java.base@10.0.2/java.lang.Thread.run(Thread.java:844)
+
+
+"File IO Thread" prio=1 Id=21 RUNNABLE
+	at java.base@10.0.2/java.io.RandomAccessFile.writeBytes(Native Method)
+	at java.base@10.0.2/java.io.RandomAccessFile.write(RandomAccessFile.java:559)
+	at app//ayj.a(SourceFile:326)
+	at app//ayj.a(SourceFile:263)
+	-  locked ayj@1f1171ab
+	at app//ayj$a.close(SourceFile:244)
+	at java.base@10.0.2/java.util.zip.DeflaterOutputStream.close(DeflaterOutputStream.java:242)
+	at java.base@10.0.2/java.io.FilterOutputStream.close(FilterOutputStream.java:188)
+	at java.base@10.0.2/java.io.FilterOutputStream.close(FilterOutputStream.java:188)
+	...
+
+
+"Netty Epoll Server IO #1" daemon prio=5 Id=22 RUNNABLE
+	at app//io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at app//io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at app//io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at app//io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at app//io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.base@10.0.2/java.lang.Thread.run(Thread.java:844)
+
+
+"threadDeathWatcher-2-1" daemon prio=1 Id=23 TIMED_WAITING
+	at java.base@10.0.2/java.lang.Thread.sleep(Native Method)
+	at app//io.netty.util.ThreadDeathWatcher$Watcher.run(ThreadDeathWatcher.java:152)
+	at app//io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.base@10.0.2/java.lang.Thread.run(Thread.java:844)
+
+
+
+Stacktrace:
+	at oa.run(SourceFile:59)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 4.15.0-1018-gcp
+	Java Version: 10.0.2, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 297016168 bytes (283 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx1G
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 20; []
+	Is Modded: Unknown (can't tell)
+	Type: Dedicated Server (map_server.txt)

@@ -1,0 +1,11 @@
+[00:14:00] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 181901ms behind, skipping 3638 tick(s)
+[00:13:53] [Server Watchdog/FATAL]: A single server tick took 60.56 seconds (should be max 0.05)
+[00:19:49] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 357299ms behind, skipping 7145 tick(s)
+[00:19:49] [Server Watchdog/FATAL]: Considering it to be crashed, server will forcibly shutdown.
+[00:19:51] [Server Watchdog/ERROR]: This crash report has been saved to: /root/ms04/./crash-reports/crash-2018-10-26_00.19.51-server.txt
+[00:19:51] [Server Shutdown Thread/INFO]: Stopping server
+[00:19:51] [Server Shutdown Thread/INFO]: Saving players
+[00:19:51] [Server Shutdown Thread/INFO]: Saving worlds
+[00:19:51] [Server Shutdown Thread/INFO]: Saving chunks for level 'world'/overworld
+[00:19:51] [Server Shutdown Thread/INFO]: Saving chunks for level 'world'/the_nether
+[00:19:51] [Server Shutdown Thread/INFO]: Saving chunks for level 'world'/the_end
