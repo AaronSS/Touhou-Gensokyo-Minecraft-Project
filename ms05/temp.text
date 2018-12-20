@@ -1,0 +1,3 @@
+Invalid maximum heap size: -Xmx1.5G
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.

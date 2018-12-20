@@ -1,0 +1,85 @@
+---- Minecraft Crash Report ----
+// Oh - I know what I did wrong!
+
+Time: 12/15/18, 7:57 PM
+Description: Exception generating new chunk
+
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.CompletableFuture$AsyncSupply@16c43f6d rejected from java.util.concurrent.ThreadPoolExecutor@732ab0af[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 17758]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2080)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:832)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at java.base/java.util.concurrent.Executors$DelegatedExecutorService.execute(Executors.java:684)
+	at java.base/java.util.concurrent.CompletableFuture.asyncSupplyStage(CompletableFuture.java:1714)
+	at java.base/java.util.concurrent.CompletableFuture.supplyAsync(CompletableFuture.java:1931)
+	at acu.a(SourceFile:62)
+	at acw.a(SourceFile:39)
+	at tc.a(SourceFile:120)
+	at tk.a(SourceFile:87)
+	at tl.c(SourceFile:123)
+	at td.a(SourceFile:219)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:747)
+	at so.b(SourceFile:360)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:681)
+	at net.minecraft.server.MinecraftServer.run(SourceFile:584)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2080)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:832)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at java.base/java.util.concurrent.Executors$DelegatedExecutorService.execute(Executors.java:684)
+	at java.base/java.util.concurrent.CompletableFuture.asyncSupplyStage(CompletableFuture.java:1714)
+	at java.base/java.util.concurrent.CompletableFuture.supplyAsync(CompletableFuture.java:1931)
+	at acu.a(SourceFile:62)
+
+-- Chunk to be generated --
+Details:
+	Location: -65,-13
+	Position hash: -51539607617
+	Generator: bov@3005ea05
+Stacktrace:
+	at tc.a(SourceFile:159)
+	at tc.a(SourceFile:124)
+	at tk.a(SourceFile:87)
+	at tl.c(SourceFile:123)
+	at td.a(SourceFile:219)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:747)
+	at so.b(SourceFile:360)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:681)
+	at net.minecraft.server.MinecraftServer.run(SourceFile:584)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+
+-- Affected level --
+Details:
+	Level name: world
+	All players: 1 total; [tf['Passionette'/1306757, l='world', x=-1007.43, y=109.36, z=-297.42]]
+	Chunk stats: ServerChunkCache: 554 Drop: 0
+	Level seed: 1135782313880997269
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: {}
+	Level spawn location: World: (-505,64,-473), Chunk: (at 7,4,7 in -32,-30; contains blocks -512,0,-480 to -497,255,-465), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 82996578 game time, 6719 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 90938 (now: false), thunder time: 4988 (now: true)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+
+-- System Details --
+Details:
+	Minecraft Version: 1.13.2
+	Operating System: Linux (amd64) version 4.15.0-1021-gcp
+	Java Version: 10.0.2, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 274055848 bytes (261 MB) / 762363904 bytes (727 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 2 total; -Xms512M -Xmx1G
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 20; [tf['Passionette'/1306757, l='world', x=-1007.43, y=109.36, z=-297.42]]
+	Data Packs: vanilla
+	Is Modded: Unknown (can't tell)
+	Type: Dedicated Server (map_server.txt)
